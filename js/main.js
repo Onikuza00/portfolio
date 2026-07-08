@@ -1,6 +1,129 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// ─── I18N STATE ───
+window.currentLang = 'es';
+let terminalTL = null;
+
+// ─── I18N INIT ───
+function initI18n() {
+  const htmlLang = document.documentElement.lang || 'es';
+  window.currentLang = htmlLang;
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === window.currentLang);
+  });
+
+  applyTranslations(window.currentLang);
+}
+
+function applyTranslations(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const val = window.i18nData?.[lang]?.[key];
+    if (!val) return;
+    // Use innerHTML for text containers, textContent for form elements
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = val;
+    } else {
+      el.innerHTML = val;
+    }
+  });
+}
+
+window.changeLanguage = function (lang) {
+  if (lang === window.currentLang) return;
+  window.currentLang = lang;
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  // Kill ALL GSAP instances and clear inline styles before touching DOM
+  ScrollTrigger.getAll().forEach(st => st.kill());
+  gsap.killTweensOf('*');
+  if (heroSplit) { heroSplit.revert(); heroSplit = null; }
+  if (heroDescSplit) { heroDescSplit.revert(); heroDescSplit = null; }
+  if (terminalTL) { terminalTL.kill(); terminalTL = null; }
+
+  // Clear GSAP inline styles from all known animated elements so they return to CSS state
+  gsap.set([
+    '.about__figure', '.contact__field', '.contact__submit',
+    '.section__title .char', '.section-desc .reveal-line', '.section-desc .reveal-word',
+    '.about__text .reveal-line', '.about__text .reveal-word',
+    '.card__meta .reveal-line', '.card__meta .reveal-word',
+    '.card__header', '.hero__title-inner .char', '.hero__desc .reveal-word', '.hero__sub',
+    '.stack__card', '.project-card',
+  ], { clearProps: 'all' });
+
+  // Apply translations (clean innerHTML with highlight spans intact)
+  applyTranslations(lang);
+
+  // Re-render project cards with translated descriptions
+  if (typeof window.reloadProjectCards === 'function') {
+    window.reloadProjectCards();
+  }
+
+  // Re-init terminal
+  initTerminalTypewriter();
+
+  // Re-split titles (preserving highlights)
+  document.querySelectorAll('.section__title').forEach(el => {
+    if (typeof SplitText !== 'undefined') {
+      try { new SplitText(el, { type: 'chars', charsClass: 'char' }); return; } catch (e) { }
+    }
+    splitChars(el);
+  });
+
+  // Re-split descs, about texts, card metas
+  document.querySelectorAll('.section-desc, .about__text, .card__meta').forEach(el => {
+    delete el.dataset.rawText;
+    if (typeof SplitText !== 'undefined') {
+      try { new SplitText(el, { type: 'lines', linesClass: 'reveal-line' }); return; } catch (e) { }
+    }
+    splitLines(el);
+  });
+
+  // Re-init hero title chars
+  const heroTitle = document.querySelector('.hero__title-inner');
+  if (heroTitle) {
+    if (typeof SplitText !== 'undefined') {
+      try { heroSplit = new SplitText(heroTitle, { type: 'chars', charsClass: 'char' }); } catch (e) { splitChars(heroTitle); }
+    } else { splitChars(heroTitle); }
+  }
+
+  // Re-split hero desc words
+  const heroDesc = document.querySelector('.hero__desc');
+  if (heroDesc) {
+    if (typeof SplitText !== 'undefined') {
+      try { heroDescSplit = new SplitText(heroDesc, { type: 'words', wordsClass: 'reveal-word' }); } catch (e) { splitWords(heroDesc); }
+    } else { splitWords(heroDesc); }
+  }
+
+  // Make all reveal elements immediately visible (they'll get animated on scroll)
+  gsap.set('.section__title .char, .hero__title-inner .char', { opacity: 1, clipPath: 'inset(0 0 0 0)', yPercent: 0, clearProps: 'transform' });
+  gsap.set('.section-desc .reveal-line, .section-desc .reveal-word, .about__text .reveal-line, .about__text .reveal-word, .card__meta .reveal-line, .card__meta .reveal-word', { opacity: 1, rotationX: 0, clearProps: 'transform' });
+  gsap.set('.hero__desc .reveal-word', { opacity: 1, rotationX: 0, clearProps: 'transform' });
+  gsap.set('.card__header, .hero__sub', { opacity: 1, y: 0, clearProps: 'transform' });
+  gsap.set('.about__figure', { opacity: 1 });
+  gsap.set('.contact__field, .contact__submit', { opacity: 1, y: 0 });
+
+  // Re-init project cards reveal
+  if (typeof window.animateProjectCards === 'function') {
+    window.animateProjectCards();
+  }
+
+  // Re-init section reveal animations for future scroll interactions
+  initSectionReveals();
+  initSectionTextReveals();
+
+  // Refresh ScrollTrigger
+  ScrollTrigger.refresh();
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  initI18n();
   initIntroAnimation();
   initNavigation();
   initTerminalTypewriter();
@@ -50,23 +173,33 @@ function initIntroAnimation() {
     splitWords(heroDesc);
   }
 
-  gsap.set('#curtain', { display: 'none' });
-  gsap.set('body', { overflow: 'auto' });
+  // ─── CURTAIN ENTRANCE ───
   const tl = gsap.timeline();
-  animateHeader(tl, 0);
-  buildPageEntrance(tl, 0.35);
-  return;
 
-  tl.to('.curtain__img--left', { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' })
-    .to('.curtain__img--right', { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' }, '<');
-
-  tl.to('.curtain__panel--left', { xPercent: -100, duration: 1.8, ease: 'expo.inOut', delay: 1.0 })
-    .to('.curtain__panel--right', { xPercent: 100, duration: 1.8, ease: 'expo.inOut' }, '<')
+  // Step 1: Curtain images slide in from off-screen
+  tl.fromTo('.curtain__img--left',
+    { xPercent: -100, opacity: 0 },
+    { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' }
+  )
+    .fromTo('.curtain__img--right',
+      { xPercent: 100, opacity: 0 },
+      { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' },
+      '<'
+    )
+    // Step 2: Panels slide away to reveal page
+    .to('.curtain__panel--left',
+      { xPercent: -100, duration: 1.8, ease: 'expo.inOut', delay: 1.0 }
+    )
+    .to('.curtain__panel--right',
+      { xPercent: 100, duration: 1.8, ease: 'expo.inOut' },
+      '<'
+    )
     .set('#curtain', { display: 'none' })
     .set('body', { overflow: 'auto' });
 
-  animateHeader(tl);
-  buildPageEntrance(tl);
+  // Step 3: Header + hero entrance (start slightly after curtain begins opening)
+  animateHeader(tl, '>-1.4');
+  buildPageEntrance(tl, '>-0.15');
 }
 
 function animateHeader(tl, startAt = '>-0.2') {
@@ -356,7 +489,8 @@ function initContactForm() {
     if (!form.checkValidity()) return;
 
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Enviando…';
+    const sendingText = window.currentLang === 'ca' ? 'Enviant…' : window.currentLang === 'en' ? 'Sending…' : 'Enviando…';
+    submitBtn.textContent = sendingText;
     submitBtn.disabled = true;
     statusEl.textContent = '';
     statusEl.className = 'contact__status';
@@ -376,15 +510,15 @@ function initContactForm() {
       });
 
       if (res.ok) {
-        statusEl.textContent = '✓ Mensaje enviado. Gracias por contactarme.';
-        statusEl.className = 'contact__status contact__status--ok';
+      statusEl.textContent = window.i18nData[window.currentLang]?.['contact.status.ok'] || '✓ Mensaje enviado. Gracias por contactarme.';
+      statusEl.className = 'contact__status contact__status--ok';
         form.querySelectorAll('input, textarea').forEach(el => { if (el.type !== 'hidden') el.value = ''; });
       } else {
         const err = await res.json();
         throw new Error(err.error?.message || 'Error del servidor');
       }
     } catch (err) {
-      statusEl.textContent = '✗ Hubo un error. Escribime directo a paucb83@gmail.com';
+      statusEl.textContent = window.i18nData[window.currentLang]?.['contact.status.err'] || '✗ Hubo un error. Escribime directo a paucb.dev@gmail.com';
       statusEl.className = 'contact__status contact__status--err';
     }
 
@@ -515,7 +649,16 @@ function splitLines(element, lineClass = 'reveal-line') {
   }
 }
 
+function initLangSwitcher() {
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.changeLanguage(btn.dataset.lang);
+    });
+  });
+}
+
 function initNavigation() {
+  initLangSwitcher();
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
 
@@ -727,19 +870,21 @@ function initTerminalTypewriter() {
   const target = document.querySelector('.js-terminal-type');
   if (!target || typeof gsap === 'undefined') return;
 
-  const messages = [
-    'Junior Full-Stack Developer',
-    'Building with Symfony, Vue, and GSAP',
-    'Crafting interactive web experiences',
-    'Modern UI & animation enthusiast',
-    'DAW graduate — always learning',
-    'Linux + Tmux + LazyVim daily driver',
+  const messages = window.i18nData?.[window.currentLang]?.['terminal.messages'] || [
+    'Inicializando perfil: Desarrollador Web Full Stack',
+    'Ejecutando animaciones... Especialista en interfaces dinámicas y GSAP.',
+    'Analizando arquitectura: Lógica de negocio segura con Symfony y JWT.',
+    'Optimizando proceso: Metodología SDD (Spec-Driven Development) activa.',
+    'Desplegando soluciones: Integración B2B, B2C, Odoo ERP y rendimiento web.',
+    'Estado del sistema: Aprendizaje continuo, resiliencia y eficiencia al 100%.',
+    'Variables de entorno cargadas: Código estructurado, buena cocina, cine y fútbol.',
   ];
 
-  const tl = gsap.timeline({ repeat: -1 });
+  if (terminalTL) terminalTL.kill();
+  terminalTL = gsap.timeline({ repeat: -1 });
 
   messages.forEach((msg) => {
-    tl.to(target, {
+    terminalTL.to(target, {
       text: msg,
       duration: 1.8,
       ease: 'none',

@@ -93,10 +93,10 @@
         <h1 class="hero__title">
           <span class="hero__title-inner" data-i18n="hero.title">Pau Cros</span>
         </h1>
-        <span class="hero__sub">Desarrollador Junior <span>Full-Stack</span></span>
+        <span class="hero__sub" data-i18n="hero.sub">Desarrollador Junior <span>Full-Stack</span></span>
       </div>
       <div class="hero__bottom">
-        <div class="hero__desc">
+        <div class="hero__desc" data-i18n="hero.desc">
           Disfruto tanto creando <span class="highlight">animaciones interactivas</span>
           como diseñando una <span class="highlight">UI/UX</span> espectacular,
           como crear un <span class="highlight">backend</span> robusto y
@@ -104,8 +104,8 @@
           <span class="highlight">mínimo detalle.</span>
         </div>
         <nav class="hero__ctas">
-          <a href="#projects" class="cta" data-i18n="hero.ctas.projects"><span class="cta__text">Proyectos</span></a>
-          <a href="#about" class="cta" data-i18n="hero.ctas.about"><span class="cta__text">Contacto</span></a>
+          <a href="#projects" class="cta"><span class="cta__text" data-i18n="hero.ctas.projects">Proyectos</span></a>
+          <a href="#about" class="cta"><span class="cta__text" data-i18n="hero.ctas.about">Contacto</span></a>
         </nav>
       </div>
     </section>
@@ -162,7 +162,7 @@
             <span class="terminal__dot terminal__dot--red"></span>
             <span class="terminal__dot terminal__dot--yellow"></span>
             <span class="terminal__dot terminal__dot--green"></span>
-            <span class="terminal__label"> &lt; dev@terminal &gt; </span>
+            <span class="terminal__label" data-i18n="terminal.label"> &lt; dev@terminal &gt; </span>
           </div>
           <div class="terminal__body">
             <p class="terminal__line">
@@ -182,14 +182,16 @@
           <div class="card__header">
             <span class="card__label">
               <span class="signal-dot"></span>
-              <span class="text-mono">PROYECTOS</span>
+              <span class="text-mono" data-i18n="projects.label">PROYECTOS</span>
             </span>
-            <span class="card__meta text-mono">Landing Pages, Webs, E-Comerce</span>
+            <span class="card__meta text-mono" data-i18n="projects.meta">11 proyectos · 2025-2026</span>
           </div>
           <div class="card__body">
             <div class="section-head">
-              <h2 class="section__title" id="projects-title">Proyectos <span class="highlight">destacados</span></h2>
-              <div class="section-desc">Una selección de trabajos recientes, desde <b>landing pages</b> con
+              <h2 class="section__title" id="projects-title" data-i18n="projects.title">Proyectos <span
+                  class="highlight">destacados</span></h2>
+              <div class="section-desc" data-i18n="projects.desc">Una selección de trabajos recientes, desde <b>landing
+                  pages</b> con
                 <b>WordPress</b> y código vanilla
                 (<b>HTML</b>, <b>CSS</b> y <b>JavaScript</b>), hasta <b>e-commerce</b> integrados con <b>ERP Odoo</b> y
                 <b>aplicaciones web</b> completas con <b>Symfony</b>
@@ -212,82 +214,36 @@
           <div class="card__header">
             <span class="card__label">
               <span class="signal-dot"></span>
-              <span class="text-mono">STACK</span>
+              <span class="text-mono" data-i18n="stack.label">STACK</span>
             </span>
-            <span class="card__meta text-mono">18 tecnologías</span>
+            <span class="card__meta text-mono" data-i18n="stack.meta">18 tecnologías</span>
           </div>
           <div class="card__body">
             <div class="section-head">
-              <h2 class="section__title" id="stack-title">Stack <span class="highlight">técnico</span></h2>
-              <div class="section-desc">Tecnologías con las que trabajo habitualmente, ordenadas por experiencia real.
+              <h2 class="section__title" id="stack-title" data-i18n="stack.title">Stack <span
+                  class="highlight">técnico</span></h2>
+              <div class="section-desc" data-i18n="stack.desc">Tecnologías con las que trabajo habitualmente, ordenadas
+                por experiencia real.
               </div>
             </div>
             <div class="stack__grid">
-              <div class="stack__card" data-pct="90">
-                <i class="stack__icon fa-brands fa-php" aria-hidden="true"></i>
-                <span class="stack__card-name">PHP</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">90%</span>
-              </div>
-              <div class="stack__card" data-pct="85">
-                <i class="stack__icon fa-brands fa-symfony" aria-hidden="true"></i>
-                <span class="stack__card-name">Symfony</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">85%</span>
-              </div>
-              <div class="stack__card" data-pct="88">
-                <i class="stack__icon fa-brands fa-vuejs" aria-hidden="true"></i>
-                <span class="stack__card-name">Vue</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">88%</span>
-              </div>
-              <div class="stack__card" data-pct="92">
-                <i class="stack__icon fa-solid fa-bolt" aria-hidden="true"></i>
-                <span class="stack__card-name">GSAP</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">92%</span>
-              </div>
-              <div class="stack__card" data-pct="80">
-                <i class="stack__icon fa-brands fa-wordpress" aria-hidden="true"></i>
-                <span class="stack__card-name">WordPress</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">80%</span>
-              </div>
-              <div class="stack__card" data-pct="75">
-                <i class="stack__icon fa-solid fa-cube" aria-hidden="true"></i>
-                <span class="stack__card-name">Odoo</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">75%</span>
-              </div>
-              <div class="stack__card" data-pct="90">
-                <i class="stack__icon fa-brands fa-js" aria-hidden="true"></i>
-                <span class="stack__card-name">JavaScript</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">90%</span>
-              </div>
-              <div class="stack__card" data-pct="95">
-                <i class="stack__icon fa-brands fa-css3-alt" aria-hidden="true"></i>
-                <span class="stack__card-name">CSS</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">95%</span>
-              </div>
-              <div class="stack__card" data-pct="65">
-                <i class="stack__icon fa-solid fa-database" aria-hidden="true"></i>
-                <span class="stack__card-name">SQL / Doctrine</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">65%</span>
-              </div>
               <div class="stack__card" data-pct="70">
-                <i class="stack__icon fa-solid fa-leaf" aria-hidden="true"></i>
-                <span class="stack__card-name">Twig</span>
+                <i class="stack__icon fa-brands fa-html5" aria-hidden="true"></i>
+                <span class="stack__card-name">HTML</span>
                 <div class="stack__bar"></div>
                 <span class="stack__pct">70%</span>
               </div>
-              <div class="stack__card" data-pct="90">
-                <i class="stack__icon fa-brands fa-html5" aria-hidden="true"></i>
-                <span class="stack__card-name">HTML5</span>
+              <div class="stack__card" data-pct="75">
+                <i class="stack__icon fa-brands fa-css3-alt" aria-hidden="true"></i>
+                <span class="stack__card-name">CSS</span>
                 <div class="stack__bar"></div>
-                <span class="stack__pct">90%</span>
+                <span class="stack__pct">75%</span>
+              </div>
+              <div class="stack__card" data-pct="60">
+                <i class="stack__icon fa-brands fa-js" aria-hidden="true"></i>
+                <span class="stack__card-name">JavaScript</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">60%</span>
               </div>
               <div class="stack__card" data-pct="40">
                 <i class="stack__icon fa-brands fa-bootstrap" aria-hidden="true"></i>
@@ -296,40 +252,88 @@
                 <span class="stack__pct">40%</span>
               </div>
               <div class="stack__card" data-pct="65">
+                <i class="stack__icon fa-brands fa-symfony" aria-hidden="true"></i>
+                <span class="stack__card-name">Symfony</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">65%</span>
+              </div>
+              <div class="stack__card" data-pct="60">
+                <i class="stack__icon fa-brands fa-vuejs" aria-hidden="true"></i>
+                <span class="stack__card-name">Vue</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">60%</span>
+              </div>
+              <div class="stack__card" data-pct="70">
+                <i class="stack__icon fa-solid fa-bolt" aria-hidden="true"></i>
+                <span class="stack__card-name">GSAP</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">70%</span>
+              </div>
+              <div class="stack__card" data-pct="40">
+                <i class="stack__icon fa-solid fa-leaf" aria-hidden="true"></i>
+                <span class="stack__card-name">Twig</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">40%</span>
+              </div>
+              <div class="stack__card" data-pct="30">
+                <i class="stack__icon fa-brands fa-node-js" aria-hidden="true"></i>
+                <span class="stack__card-name">Node.js</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">30%</span>
+              </div>
+              <div class="stack__card" data-pct="40">
+                <i class="stack__icon fa-brands fa-wordpress" aria-hidden="true"></i>
+                <span class="stack__card-name">WordPress</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">40%</span>
+              </div>
+              <div class="stack__card" data-pct="50">
+                <i class="stack__icon fa-solid fa-cube" aria-hidden="true"></i>
+                <span class="stack__card-name">Odoo</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">50%</span>
+              </div>
+              <div class="stack__card" data-pct="45">
+                <i class="stack__icon fa-solid fa-database" aria-hidden="true"></i>
+                <span class="stack__card-name">SQL / Doctrine</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">45%</span>
+              </div>
+              <div class="stack__card" data-pct="65">
                 <i class="stack__icon fa-brands fa-git-alt" aria-hidden="true"></i>
                 <span class="stack__card-name">Git</span>
                 <div class="stack__bar"></div>
                 <span class="stack__pct">65%</span>
               </div>
-              <div class="stack__card" data-pct="60">
+              <div class="stack__card" data-pct="50">
                 <i class="stack__icon fa-brands fa-github" aria-hidden="true"></i>
                 <span class="stack__card-name">GitHub Actions</span>
                 <div class="stack__bar"></div>
-                <span class="stack__pct">60%</span>
+                <span class="stack__pct">50%</span>
+              </div>
+              <div class="stack__card" data-pct="50">
+                <i class="stack__icon fa-solid fa-code" aria-hidden="true"></i>
+                <span class="stack__card-name">C# / .NET</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">50%</span>
               </div>
               <div class="stack__card" data-pct="85">
-                <i class="stack__icon fa-solid fa-code" aria-hidden="true"></i>
-                <span class="stack__card-name">C# /.NET</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">85%</span>
-              </div>
-              <div class="stack__card" data-pct="70">
-                <i class="stack__icon fa-brands fa-node-js" aria-hidden="true"></i>
-                <span class="stack__card-name">Node.js</span>
-                <div class="stack__bar"></div>
-                <span class="stack__pct">70%</span>
-              </div>
-              <div class="stack__card" data-pct="90">
                 <i class="stack__icon fa-solid fa-laptop-code" aria-hidden="true"></i>
                 <span class="stack__card-name">VS Code</span>
                 <div class="stack__bar"></div>
-                <span class="stack__pct">90%</span>
+                <span class="stack__pct">85%</span>
               </div>
-              <div class="stack__card" data-pct="35">
+              <div class="stack__card" data-pct="20">
                 <i class="stack__icon fa-brands fa-docker" aria-hidden="true"></i>
                 <span class="stack__card-name">Docker</span>
                 <div class="stack__bar"></div>
-                <span class="stack__pct">35%</span>
+                <span class="stack__pct">20%</span>
+              </div>
+              <div class="stack__card" data-pct="45">
+                <i class="stack__icon fa-brands fa-aws" aria-hidden="true"></i>
+                <span class="stack__card-name">AWS</span>
+                <div class="stack__bar"></div>
+                <span class="stack__pct">45%</span>
               </div>
             </div>
           </div>
@@ -344,22 +348,29 @@
           <div class="card__header">
             <span class="card__label">
               <span class="signal-dot"></span>
-              <span class="text-mono">PERFIL</span>
+              <span class="text-mono" data-i18n="about.label">PERFIL</span>
             </span>
-            <span class="card__meta text-mono">about.me</span>
+            <span class="card__meta text-mono" data-i18n="about.meta">desarrollador · persona</span>
           </div>
           <div class="card__body">
             <div class="section-head">
-              <h2 class="section__title" id="about-title">Sobre <span class="highlight">mi</span></h2>
-              <div class="section-desc">Breve resumen de quién soy y cómo trabajo.</div>
+              <h2 class="section__title" id="about-title" data-i18n="about.title">Sobre <span
+                  class="highlight">mi</span></h2>
+              <div class="section-desc" data-i18n="about.desc">Breve resumen de quién soy y cómo trabajo.</div>
             </div>
             <div class="about__layout">
               <div class="about__content">
-                <p class="about__text">Soy Pau Crosas, desarrollador full-stack con experiencia creando sitios y
-                  aplicaciones web modernas. Me especializo en animaciones performantes, arquitecturas limpias y
-                  soluciones que escalan.</p>
-                <p class="about__text">Cuando no estoy codeando, sigo explorando nuevas herramientas, contribuyendo a
-                  proyectos personales y aprendiendo patrones de arquitectura.</p>
+                <p class="about__text" data-i18n="about.text.1">Soy un desarrollador web Full Stack titulado en DAW, con
+                  una fuerte especialización en frontend y la creación de interfaces dinámicas. Mi pasión principal es
+                  el diseño de interacciones fluidas, y tengo una base técnica sólida en backend desarrollando
+                  aplicaciones seguras mediante la gestión de políticas CORS y autenticación con JWT.</p>
+                <p class="about__text" data-i18n="about.text.2">A nivel profesional, aporto madurez, eficiencia y
+                  constancia. Soy una persona resiliente con una motivación innegociable por el aprendizaje continuo —
+                  exploro nuevas tecnologías y arquitecturas de IA para integrarlas en el desarrollo, como ya hice con
+                  Groq/Llama en el proyecto 7Vision. Esta misma dedicación se refleja en mi tiempo libre con 'GSAP
+                  Academy', donde investigo y aplico a diario técnicas avanzadas de animación.</p>
+                <p class="about__text" data-i18n="about.text.3">Cuando no estoy escribiendo código, me gusta cocinar,
+                  ver buen cine y ver el fútbol.</p>
               </div>
               <figure class="about__figure">
                 <img class="about__avatar" src="img/yo.png" alt="Retrato de Pau Crosas" width="400" height="400" />
@@ -377,37 +388,42 @@
           <div class="card__header">
             <span class="card__label">
               <span class="signal-dot"></span>
-              <span class="text-mono">CONTACTO</span>
+              <span class="text-mono" data-i18n="contact.label">CONTACTO</span>
             </span>
-            <span class="card__meta text-mono">get in touch</span>
+            <span class="card__meta text-mono" data-i18n="contact.meta">Ponte en contacto conmigo</span>
           </div>
           <div class="card__body">
             <div class="section-head">
-              <h2 class="section__title" id="contact-title">Contacto</h2>
-              <div class="section-desc">¿Tenés un proyecto en mente? Escribime y lo charlamos.</div>
+              <h2 class="section__title" id="contact-title" data-i18n="contact.title">Contacto</h2>
+              <div class="section-desc" data-i18n="contact.desc">¿Tenés un proyecto en mente? Escribime y lo charlamos.
+              </div>
             </div>
             <form class="contact__form" action="https://formspree.io/f/xqevbdzz" method="POST">
 
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
               <div class="contact__field">
-                <label class="contact__label text-mono" for="contact-name">Nombre</label>
+                <label class="contact__label text-mono" for="contact-name" data-i18n="contact.form.name">Nombre</label>
                 <input class="contact__input" type="text" id="contact-name" name="name" required />
               </div>
               <div class="contact__field">
-                <label class="contact__label text-mono" for="contact-email">Correo electrónico</label>
+                <label class="contact__label text-mono" for="contact-email" data-i18n="contact.form.email">Correo
+                  electrónico</label>
                 <input class="contact__input" type="email" id="contact-email" name="email" required />
               </div>
               <div class="contact__field">
-                <label class="contact__label text-mono" for="contact-company">Empresa (opcional)</label>
-                <input class="contact__input" type="text" id="contact-company" name="company" />
+                <label class="contact__label text-mono" for="contact-company"
+                  data-i18n="contact.form.subject">Asunto</label>
+                <input class="contact__input" type="text" id="contact-company" name="company" required />
               </div>
               <div class="contact__field">
-                <label class="contact__label text-mono" for="contact-message">Mensaje</label>
+                <label class="contact__label text-mono" for="contact-message"
+                  data-i18n="contact.form.message">Mensaje</label>
                 <textarea class="contact__input contact__input--textarea" id="contact-message" name="message" rows="5"
                   required></textarea>
               </div>
-              <button class="cta contact__submit" type="submit"><span class="cta__text">Enviar mensaje</span></button>
+              <button class="cta contact__submit" type="submit"><span class="cta__text"
+                  data-i18n="contact.form.submit">Enviar mensaje</span></button>
               <p class="contact__status" aria-live="polite"></p>
             </form>
           </div>
@@ -422,44 +438,70 @@
           <div class="card__header">
             <span class="card__label">
               <span class="signal-dot"></span>
-              <span class="text-mono">FAQ</span>
+              <span class="text-mono" data-i18n="faq.label">FAQ</span>
             </span>
-            <span class="card__meta text-mono">3 preguntas</span>
+            <span class="card__meta text-mono" data-i18n="faq.meta">¿Tienes dudas?</span>
           </div>
           <div class="card__body">
             <div class="section-head">
-              <h2 class="section__title" id="faq-title">Preguntas <span class="highlight">frecuentes</span></h2>
-              <div class="section-desc">Respuestas a las consultas más comunes.</div>
+              <h2 class="section__title" id="faq-title" data-i18n="faq.title">Preguntas <span
+                  class="highlight">frecuentes</span></h2>
+              <div class="section-desc" data-i18n="faq.desc">Respuestas a las consultas más comunes.</div>
             </div>
             <div class="faq__list">
               <details class="faq__item" id="faq-01">
                 <summary class="faq__summary" aria-expanded="false" aria-controls="faq-answer-01">
                   <span class="faq__number text-mono">[01]</span>
-                  <h3 class="faq__question">¿Trabajas con proyectos internacionales?</h3>
+                  <h3 class="faq__question" data-i18n="faq.q.1">¿Qué tipo de proyectos desarrollas?</h3>
                 </summary>
                 <div class="faq__answer" id="faq-answer-01">
-                  <p>Sí, colaboro con equipos y clientes de cualquier zona horaria siempre que haya comunicación clara y
-                    objetivos definidos.</p>
+                  <p data-i18n="faq.a.1">Desde landing pages con animaciones avanzadas hasta e-commerce B2B integrados
+                    con ERP y aplicaciones web completas con Symfony. Me adapto al proyecto que toque.</p>
                 </div>
               </details>
               <details class="faq__item" id="faq-02">
                 <summary class="faq__summary" aria-expanded="false" aria-controls="faq-answer-02">
                   <span class="faq__number text-mono">[02]</span>
-                  <h3 class="faq__question">¿Qué tecnología prefieres para el frontend?</h3>
+                  <h3 class="faq__question" data-i18n="faq.q.2">¿Cómo es tu flujo de trabajo?</h3>
                 </summary>
                 <div class="faq__answer" id="faq-answer-02">
-                  <p>Depende del proyecto. Vue es mi opción por defecto para SPAs, pero me adapto a la pila del cliente
-                    si es necesario.</p>
+                  <p data-i18n="faq.a.2">Antes de escribir código planifico con SDD (Spec-Driven Development):
+                    especificar, diseñar, dividir en tareas, implementar. Esto me permite mantener calidad sin depender
+                    de prueba y error. Complemento el proceso con herramientas de IA para tareas concretas, pero la
+                    arquitectura y las decisiones importantes las tomo yo.</p>
                 </div>
               </details>
               <details class="faq__item" id="faq-03">
                 <summary class="faq__summary" aria-expanded="false" aria-controls="faq-answer-03">
                   <span class="faq__number text-mono">[03]</span>
-                  <h3 class="faq__question">¿Cuánto tiempo lleva un proyecto medio?</h3>
+                  <h3 class="faq__question" data-i18n="faq.q.3">¿Integras inteligencia artificial en tus desarrollos?
+                  </h3>
                 </summary>
                 <div class="faq__answer" id="faq-answer-03">
-                  <p>Una web corporativa con diseño personalizado suele estar entre 3 y 6 semanas, dependiendo de
-                    funcionalidades y contenido.</p>
+                  <p data-i18n="faq.a.3">Sí, he integrado modelos como Groq/Llama para funcionalidades como
+                    recomendadores o asistentes. Me interesa aplicar IA donde realmente aporte valor, no por moda.</p>
+                </div>
+              </details>
+              <details class="faq__item" id="faq-04">
+                <summary class="faq__summary" aria-expanded="false" aria-controls="faq-answer-04">
+                  <span class="faq__number text-mono">[04]</span>
+                  <h3 class="faq__question" data-i18n="faq.q.4">¿Trabajas con animaciones complejas?</h3>
+                </summary>
+                <div class="faq__answer" id="faq-answer-04">
+                  <p data-i18n="faq.a.4">Es mi especialidad. Uso GSAP a diario — ScrollTrigger, SplitText, MorphSVG,
+                    scroll horizontal. Incluso tengo un laboratorio personal (GSAP Academy) donde investigo y pruebo
+                    técnicas nuevas de forma continua.</p>
+                </div>
+              </details>
+              <details class="faq__item" id="faq-05">
+                <summary class="faq__summary" aria-expanded="false" aria-controls="faq-answer-05">
+                  <span class="faq__number text-mono">[05]</span>
+                  <h3 class="faq__question" data-i18n="faq.q.5">¿Ofreces mantenimiento de los proyectos?</h3>
+                </summary>
+                <div class="faq__answer" id="faq-answer-05">
+                  <p data-i18n="faq.a.5">Sí, todos los proyectos incluyen una fase de post-lanzamiento. Prefiero dejar
+                    el código documentado y con una base sólida que pueda escalar o ajustarse sin tener que rehacerlo.
+                  </p>
                 </div>
               </details>
             </div>
@@ -473,20 +515,23 @@
   <!-- ═══ FOOTER ═══ -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p class="footer__copy text-mono">&copy; 2026 Pau Crosas. Todos los derechos reservados.</p>
+      <p class="footer__copy text-mono" data-i18n="footer.copyright">&copy; 2026 Pau Crosas. Todos los derechos
+        reservados.</p>
       <ul class="footer__social">
         <li>
-          <a class="footer__link" href="#" aria-label="GitHub">
+          <a class="footer__link" href="https://github.com/Onikuza00" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub">
             <i class="fa-brands fa-github" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a class="footer__link" href="#" aria-label="LinkedIn">
+          <a class="footer__link" href="https://www.linkedin.com/in/pau-crosas-batista-62ab293a5" target="_blank"
+            rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
           </a>
         </li>
         <li>
-          <a class="footer__link" href="#" aria-label="Correo electrónico">
+          <a class="footer__link" href="mailto:paucb.dev@gmail.com" aria-label="Correo electrónico">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
           </a>
         </li>
@@ -495,9 +540,9 @@
   </footer>
 
   <!-- JS -->
+  <script src="js/translations.js" defer></script>
   <script src="js/projects.js" defer></script>
   <script src="js/main.js" defer></script>
-  <script src="js/translations.js" defer></script>
 </body>
 
 </html>
