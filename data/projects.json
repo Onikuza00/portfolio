@@ -1,0 +1,123 @@
+[
+  {
+    "id": "cms",
+    "name": "CMS",
+    "desc": "Panel de administración custom con arquitectura limpia y API propia.",
+    "expandDesc": "Headless CMS construido desde cero con Symfony y API REST. Panel de administración para gestionar contenido multimedia, usuarios y roles. Arquitectura limpia con separación por capas, JWT auth y documentación de API automatizada.",
+    "tags": ["HTML", "Bootstrap", "JS", "Symfony", "API REST"],
+    "date": "2026-07",
+    "url": "",
+    "img": "cms3.webp",
+    "images": ["cms1.webp", "cms2.webp", "cms3.webp", "cms4.webp", "cms5.webp"]
+  },
+  {
+    "id": "aula-gastronomica",
+    "name": "Aula Gastronómica",
+    "desc": "Web institucional para escuela de cocina con cursos y eventos.",
+    "expandDesc": "Plataforma web para escuela de cocina y gastronomía. Catálogo de cursos, talleres y eventos con sistema de inscripción. Diseño que transmite la pasión por la cocina con animaciones GSAP y experiencia envolvente. Galería de platos, equipo docente y blog de recetas.",
+    "tags": ["HTML", "CSS", "JS", "GSAP", "Lenis"],
+    "date": "2026-06",
+    "url": "",
+    "img": "aula1.webp",
+    "images": ["aula1.webp", "aula2.webp", "aula3.webp", "aula4.webp"]
+  },
+  {
+    "id": "victoriaTaylor",
+    "name": "Victoria Taylor",
+    "desc": "Landing page elegante con diseño cuidado y animaciones fluidas.",
+    "expandDesc": "Landing page con diseño clean y tipográfico para marca personal. Animaciones sutiles de entrada, paleta de colores suaves y enfoque en la presentación de servicios profesionales. Optimizada para conversión con CTAS estratégicos.",
+    "tags": ["HTML", "CSS", "JS", "GSAP", "Lenis"],
+    "date": "2026-05",
+    "url": "",
+    "img": "victoria4.webp",
+    "images": ["victoria1.webp", "victoria2.webp", "victoria3.webp", "victoria4.webp", "victoria5.webp"]
+  },
+  {
+    "id": "palmitoHouse",
+    "name": "Palmito House",
+    "desc": "Landing page visual con galería de proyectos y experiencia inmersiva.",
+    "expandDesc": "Landing page visual para proyecto inmobiliario. Galería de propiedades con diseño inmersivo, transiciones suaves entre secciones y enfoque en la experiencia de navegación. Ideal para mostrar portfolio de proyectos residenciales.",
+    "tags": ["HTML", "CSS", "JS", "GSAP", "Lenis"],
+    "date": "2026-05",
+    "url": "",
+    "img": "palmito2.webp",
+    "images": ["palmito1.webp", "palmito2.webp", "palmito3.webp", "palmito4.webp", "palmito5.webp"]
+  },
+  {
+    "id": "voraStudio",
+    "name": "Vora Studio",
+    "desc": "Web corporativa para estudio creativo con servicios, packs y portfolio interactivo.",
+    "expandDesc": "Web corporativa para estudio creativo de comunicación y diseño. Presenta servicios, packs mensuales, proyectos destacados y formulario de contacto. Diseño oscuro con identidad de marca sólida, animaciones GSAP y enfoque en storytelling visual.",
+    "tags": ["HTML", "CSS", "JS", "GSAP", "Lenis"],
+    "date": "2026-04",
+    "url": "https://vorastudio.cat",
+    "img": "vora3.webp",
+    "images": ["vora1.webp", "vora2.webp", "vora3.webp", "vora4.webp", "vora5.webp", "vora6.webp"]
+  },
+  {
+    "id": "comercial-ros",
+    "name": "Comercial Ros",
+    "desc": "Web corporativa para comercial de frutas con catálogo integrado desde Odoo.",
+    "expandDesc": "Web corporativa para empresa de comercialización de frutas con integración ERP Odoo. Catálogo de productos en tiempo real, diseño profesional con animaciones GSAP y scroll suave Lenis. Multi-idioma, formulario de contacto y presencia online optimizada para el sector agroalimentario.",
+    "tags": ["HTML", "CSS", "JS", "GSAP", "Lenis", "Odoo"],
+    "date": "2026-02",
+    "url": "https://comercialros.cat",
+    "img": "cros6.webp",
+    "images": ["cros1.webp", "cros3.webp", "cros4.webp", "cros5.webp", "cros6.webp", "cros7.webp"]
+  },
+  {
+    "id": "raymel",
+    "name": "Raymel.cat",
+    "desc": "Landing page con catálogo de dulces premium, animaciones GSAP y scroll suave Lenis.",
+    "expandDesc": "Landing page interactiva para tienda de caramelos premium. Catálogo visual con animaciones GSAP, scroll suave con Lenis, diseño responsive mobile-first y enfoque en la experiencia de producto. Navegación multi-idioma (CAT, ES, EN) y formulario de contacto funcional.",
+    "tags": ["HTML", "CSS", "JS", "GSAP", "Lenis"],
+    "date": "2026-01",
+    "url": "https://raymel.cat",
+    "img": "raymel1.webp",
+    "images": ["raymel1.webp", "raymel2.webp", "raymel3.webp", "raymel4.webp", "raymel5.webp"]
+  },
+  {
+    "id": "guardavan",
+    "name": "Guardavan",
+    "desc": "Web corporativa con presencia profesional y diseño moderno en WordPress.",
+    "expandDesc": "Web corporativa para empresa de furgonetas adaptadas. Diseño profesional con secciones de servicios, flota y contacto. Interfaz clara, navegación intuitiva y gestión de contenido desde WordPress.",
+    "tags": ["WordPress", "HTML", "CSS", "JS", "PHP"],
+    "date": "2026-03",
+    "url": "",
+    "img": "guardavan2.webp",
+    "images": ["guardavan1.webp", "guardavan2.webp", "guardavan3.webp", "guardavan4.webp"]
+  },
+  {
+    "id": "aurexinmobles",
+    "name": "AurexInmobles",
+    "desc": "Web corporativa para inmobiliaria con catálogo de propiedades en WordPress.",
+    "expandDesc": "Web profesional para agencia inmobiliaria con gestión de contenido desde WordPress. Catálogo de propiedades con filtros, galería de imágenes, página de cada inmueble y formulario de contacto. Diseño moderno y responsive optimizado para captación de clientes.",
+    "tags": ["WordPress", "HTML", "CSS", "JS", "PHP"],
+    "date": "2026-03",
+    "url": "",
+    "img": "aurexinmobles5.webp",
+    "images": ["aurexinmobles1.webp", "aurexinmobles2.webp", "aurexinmobles3.webp", "aurexinmobles4.webp", "aurexinmobles5.webp"]
+  },
+  {
+    "id": "7vision",
+    "name": "7Vision",
+    "desc": "Aplicación web interactiva con dashboard, visualización de datos y CMS.",
+    "expandDesc": "Plataforma web completa con panel de administración, visualización de datos interactiva y gestión de contenido. Construida con Symfony + Vue para el frontend dinámico, GSAP para animaciones fluidas y API REST propia. Dashboard con gráficos, tablas y exportación de datos.",
+    "tags": ["JS", "GSAP", "Symfony", "Vue"],
+    "date": "2026-08",
+    "url": "",
+    "img": "7vision5.webp",
+    "images": ["7vision1.webp", "7vision2.webp", "7vision3.webp", "7vision4.webp", "7vision5.webp", "7vision6.webp", "7vision7.webp", "7vision8.webp"]
+  },
+  {
+    "id": "casa-nostra",
+    "name": "Casa Nostra",
+    "desc": "Web corporativa para restaurante con presencia profesional y carta online.",
+    "expandDesc": "Web corporativa para restaurante con diseño atractivo, carta online, galería de platos y formulario de reservas. Desarrollo con PHP y maquetación HTML/CSS limpia. Optimizada para buscar clientes y mostrar la esencia del restaurante.",
+    "tags": ["HTML", "CSS", "PHP"],
+    "date": "2026-09",
+    "url": "",
+    "img": "casanostra1.webp",
+    "images": ["casanostra1.webp", "casanostra2.webp", "casanostra3.webp", "casanostra4.webp", "casanostra5.webp"]
+  }
+]
