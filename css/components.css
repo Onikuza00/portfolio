@@ -1027,6 +1027,12 @@
   position: relative;
 }
 
+.expand__carousel-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
 .carousel__track {
   display: flex;
   width: 100%;
@@ -1134,6 +1140,10 @@
 }
 
 /* --- ABOUT --- */
+#about .section-head {
+  margin-bottom: var(--space-3);
+}
+
 .about__layout {
   display: flex;
   flex-direction: column-reverse;
@@ -1395,14 +1405,15 @@
   .grid__projects {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: var(--space-6);
     width: 100%;
     padding: 0;
     perspective: 800px;
   }
 
   .project-card {
-    flex: 0 0 calc(33.33% - var(--space-6));
+    flex: 0 0 calc(33.33% - (var(--space-6) * 2 / 3));
     flex-direction: row;
     overflow: hidden;
     transition: flex 0.3s ease;

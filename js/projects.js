@@ -19,14 +19,16 @@ function goToPage(page) {
   const grid = document.getElementById('gridProjects');
   if (!grid) return;
 
+  const nav = document.getElementById('pagination');
+  const isInitialLoad = !nav || !nav.dataset.rendered;
+
   const start = (page - 1) * PROJECTS_PER_PAGE;
   const pageProjects = allProjects.slice(start, start + PROJECTS_PER_PAGE);
 
   grid.innerHTML = pageProjects.map(renderCard).join('');
   renderPagination();
 
-  const nav = document.getElementById('pagination');
-  if (nav && nav.dataset.rendered === 'true') {
+  if (!isInitialLoad) {
     if (typeof window.animateProjectCards === 'function') {
       window.animateProjectCards();
     }
@@ -36,6 +38,11 @@ function goToPage(page) {
     ScrollTrigger.refresh();
   }
 }
+
+// Expose for language change re-render
+window.reloadProjectCards = function () {
+  goToPage(currentPage);
+};
 
 function collapseExpanded() {
   document.querySelectorAll('.project-card.is-expanded').forEach(c => {
@@ -47,6 +54,10 @@ function collapseExpanded() {
 }
 
 function renderCard(p) {
+  const lang = window.currentLang || 'es';
+  const tDesc = window.i18nData?.[lang]?.[`project.${p.id}.desc`] || p.desc;
+  const tExpandDesc = window.i18nData?.[lang]?.[`project.${p.id}.expandDesc`] || p.expandDesc;
+
   const uniqueImages = Array.from(new Set([p.img, ...(p.images || [])]));
   const images = uniqueImages.map(src =>
     `<img src="img/proyectos/${src}" alt="${p.name}" loading="lazy" />`
@@ -61,16 +72,15 @@ function renderCard(p) {
         <div class="project-card__info">
           <h3 class="project-card__name">${p.name}</h3>
           <time class="project-card__date">${dateStr}</time>
-          <p class="project-card__desc">${p.desc}</p>
-          <p class="expand__desc" data-raw-text="${p.expandDesc}">${p.expandDesc}</p>
+          <p class="project-card__desc">${tDesc}</p>
+          <p class="expand__desc" data-raw-text="${tExpandDesc}">${tExpandDesc}</p>
           <ul class="project-card__tags">
             ${p.tags.map(t => `<li>${t}</li>`).join('')}
           </ul>
-          ${p.url ? `<a href="${p.url}" class="project-card__link" target="_blank" rel="noopener noreferrer">Visitar proyecto →</a>` : ''}
         </div>
       </div>
       <div class="project-card__expand">
-        ${images ? `<div class="expand__carousel"><div class="carousel__track">${images}${images}${images}${images}</div></div>` : ''}
+        ${images ? `<a href="${p.url || '#'}" ${p.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="expand__carousel-link"><div class="expand__carousel"><div class="carousel__track">${images}${images}${images}${images}</div></div></a>` : ''}
       </div>
     </article>
   `;
