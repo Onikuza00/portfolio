@@ -239,7 +239,7 @@ function initSectionTextReveals() {
       scrollTrigger: {
         trigger: section,
         start: isLong ? 'top 70%' : 'top 80%',
-        toggleActions: isLong ? 'play none none reverse' : 'play reverse play reverse',
+        toggleActions: 'play none none reverse',
       },
     });
 
