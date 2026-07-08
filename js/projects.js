@@ -19,14 +19,16 @@ function goToPage(page) {
   const grid = document.getElementById('gridProjects');
   if (!grid) return;
 
+  const nav = document.getElementById('pagination');
+  const isInitialLoad = !nav || !nav.dataset.rendered;
+
   const start = (page - 1) * PROJECTS_PER_PAGE;
   const pageProjects = allProjects.slice(start, start + PROJECTS_PER_PAGE);
 
   grid.innerHTML = pageProjects.map(renderCard).join('');
   renderPagination();
 
-  const nav = document.getElementById('pagination');
-  if (nav && nav.dataset.rendered === 'true') {
+  if (!isInitialLoad) {
     if (typeof window.animateProjectCards === 'function') {
       window.animateProjectCards();
     }
