@@ -36,12 +36,7 @@ function goToPage(page) {
     // Scroll to projects section so focus stays on the content
     const projectsSection = document.getElementById('projects');
     if (projectsSection) {
-      const headerH = document.getElementById('header')?.offsetHeight || 60;
-      const sectionTop = projectsSection.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: sectionTop - headerH - 12,
-        behavior: 'smooth'
-      });
+      projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
