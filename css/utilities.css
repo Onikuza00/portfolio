@@ -1,6 +1,6 @@
 .section__title {
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 6vw, 2rem);
   margin-bottom: var(--space-8);
   perspective: 800px;
   transform-style: preserve-3d;

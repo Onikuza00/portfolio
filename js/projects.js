@@ -32,6 +32,17 @@ function goToPage(page) {
     if (typeof window.animateProjectCards === 'function') {
       window.animateProjectCards();
     }
+
+    // Scroll to projects section so focus stays on the content
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      const headerH = document.getElementById('header')?.offsetHeight || 60;
+      const sectionTop = projectsSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionTop - headerH - 12,
+        behavior: 'smooth'
+      });
+    }
   }
 
   if (typeof ScrollTrigger !== 'undefined') {
@@ -39,9 +50,11 @@ function goToPage(page) {
   }
 }
 
-// Expose for language change re-render
+// Expose for language change re-render — keep scroll position
 window.reloadProjectCards = function () {
+  const prevScrollY = window.scrollY;
   goToPage(currentPage);
+  requestAnimationFrame(() => window.scrollTo(0, prevScrollY));
 };
 
 function collapseExpanded() {
