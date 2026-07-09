@@ -1,12 +1,12 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // ─── I18N STATE ───
-window.currentLang = 'es';
+window.currentLang = 'ca';
 let terminalTL = null;
 
 // ─── I18N INIT ───
 function initI18n() {
-  const htmlLang = document.documentElement.lang || 'es';
+  const htmlLang = document.documentElement.lang || 'ca';
   window.currentLang = htmlLang;
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -176,30 +176,39 @@ function initIntroAnimation() {
   // ─── CURTAIN ENTRANCE ───
   const tl = gsap.timeline();
 
-  // Step 1: Curtain images slide in from off-screen
-  tl.fromTo('.curtain__img--left',
-    { xPercent: -100, opacity: 0 },
-    { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' }
-  )
-    .fromTo('.curtain__img--right',
-      { xPercent: 100, opacity: 0 },
-      { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' },
-      '<'
+  // Skip curtain animation on mobile — it's hidden via CSS
+  if (!isMobile) {
+    // Step 1: Curtain images slide in from off-screen
+    tl.fromTo('.curtain__img--left',
+      { xPercent: -100, opacity: 0 },
+      { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' }
     )
-    // Step 2: Panels slide away to reveal page
-    .to('.curtain__panel--left',
-      { xPercent: -100, duration: 1.8, ease: 'expo.inOut', delay: 1.0 }
-    )
-    .to('.curtain__panel--right',
-      { xPercent: 100, duration: 1.8, ease: 'expo.inOut' },
-      '<'
-    )
-    .set('#curtain', { display: 'none' })
-    .set('body', { overflow: 'auto' });
+      .fromTo('.curtain__img--right',
+        { xPercent: 100, opacity: 0 },
+        { xPercent: 0, opacity: 1, duration: 1.5, ease: 'bounce.out' },
+        '<'
+      )
+      // Step 2: Panels slide away to reveal page
+      .to('.curtain__panel--left',
+        { xPercent: -100, duration: 1.8, ease: 'expo.inOut', delay: 1.0 }
+      )
+      .to('.curtain__panel--right',
+        { xPercent: 100, duration: 1.8, ease: 'expo.inOut' },
+        '<'
+      )
+      .set('#curtain', { display: 'none' })
+      .set('body', { overflow: 'auto' });
 
-  // Step 3: Header + hero entrance (start slightly after curtain begins opening)
-  animateHeader(tl, '>-1.4');
-  buildPageEntrance(tl, '>-0.15');
+    // Step 3: Header + hero entrance (start slightly after curtain begins opening)
+    animateHeader(tl, '>-1.4');
+    buildPageEntrance(tl, '>-0.15');
+  } else {
+    // Mobile: no curtain, animate hero directly
+    gsap.set('#curtain', { display: 'none' });
+    gsap.set('body', { overflow: 'auto' });
+    animateHeader(tl, 0);
+    buildPageEntrance(tl, '>-0.05');
+  }
 }
 
 function animateHeader(tl, startAt = '>-0.2') {

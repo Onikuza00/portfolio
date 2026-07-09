@@ -1609,6 +1609,12 @@
   pointer-events: none;
 }
 
+@media (width < 768px) {
+  .curtain {
+    display: none !important;
+  }
+}
+
 .curtain__panel {
   position: absolute;
   top: 0;
