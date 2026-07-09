@@ -332,15 +332,19 @@
     background:
       linear-gradient(to bottom,
         var(--bg) 0%,
-        transparent 20%),
+        transparent 25%),
       linear-gradient(to bottom,
-        transparent 50%,
+        transparent 55%,
         var(--bg) 100%),
       linear-gradient(to right,
         var(--bg) 0%,
-        var(--bg) 10%,
-        transparent 30%),
-      url('../img/fondo.jpg') 60% center / 140% no-repeat;
+        var(--bg) 15%,
+        transparent 35%),
+      url('../img/fondo.jpg') 55% 45% / 160% no-repeat;
+  }
+
+  .hero__bottom {
+    margin-top: -2rem;
   }
 }
 
@@ -1395,6 +1399,12 @@
 .faq__question {
   font-size: var(--text-base);
   color: var(--c-text-b);
+}
+
+@media (max-width: 480px) {
+  .faq__question {
+    line-height: 1.5;
+  }
 }
 
 .faq__answer {
