@@ -698,7 +698,7 @@ function initProjectExpand() {
     return document.querySelectorAll('.project-card');
   }
 
-  function collapseCard(expandEl, cb) {
+  function collapseCard(expandEl, cb, options = {}) {
     const isDesktop = window.innerWidth >= 1024;
     const card = expandEl?.closest('.project-card');
 
@@ -725,16 +725,18 @@ function initProjectExpand() {
       if (cb) cb();
     }
 
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      requestAnimationFrame(() => {
-        const sectionTop = projectsSection.getBoundingClientRect().top + window.scrollY;
-        const offset = 80;
-        window.scrollTo({
-          top: sectionTop - offset,
-          behavior: 'smooth'
+    if (options.scrollToProjects === true) {
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+        requestAnimationFrame(() => {
+          const sectionTop = projectsSection.getBoundingClientRect().top + window.scrollY;
+          const offset = 80;
+          window.scrollTo({
+            top: sectionTop - offset,
+            behavior: 'smooth'
+          });
         });
-      });
+      }
     }
   }
 
@@ -764,7 +766,16 @@ function initProjectExpand() {
           height: expandEl.scrollHeight,
           duration: 0.4,
           ease: 'power3.out',
-          onComplete: () => gsap.set(expandEl, { height: 'auto' })
+          onComplete: () => {
+            gsap.set(expandEl, { height: 'auto' });
+            // Scroll to card so it's visible after expand
+            const headerH = document.getElementById('header')?.offsetHeight || 60;
+            const cardTop = card.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: cardTop - headerH - 12,
+              behavior: 'smooth'
+            });
+          }
         });
       }
     }
@@ -818,7 +829,7 @@ function initProjectExpand() {
 
     getCards().forEach(other => {
       if (other.classList.contains('is-expanded')) {
-        collapseCard(other.querySelector('.project-card__expand'));
+        collapseCard(other.querySelector('.project-card__expand'), undefined, { scrollToProjects: false });
       }
     });
 
