@@ -8,7 +8,7 @@ window.i18nData = {
 
     // ─── HERO ───
     "hero.title": "Pau Cros",
-    "hero.sub": "Desenvolupador Junior <span>Full-Stack</span>",
+    "hero.sub": "Desenvolupador <span>Full-Stack</span>",
     "hero.desc": "Gaudeixo tant creant <span class=\"highlight\">animacions interactives</span> com dissenyant una <span class=\"highlight\">UI/UX</span> espectacular, com crear un <span class=\"highlight\">backend</span> robust i <span class=\"highlight\">segur</span> cuidant fins al més <span class=\"highlight\">mínim detall.</span>",
     "hero.ctas.projects": "Projectes",
     "hero.ctas.about": "Contacte",
@@ -117,7 +117,7 @@ window.i18nData = {
 
     // ─── HERO ───
     "hero.title": "Pau Cros",
-    "hero.sub": "Desarrollador Junior <span>Full-Stack</span>",
+    "hero.sub": "Desarrollador <span>Full-Stack</span>",
     "hero.desc": "Disfruto tanto creando <span class=\"highlight\">animaciones interactivas</span> como diseñando una <span class=\"highlight\">UI/UX</span> espectacular, como crear un <span class=\"highlight\">backend</span> robusto y <span class=\"highlight\">seguro</span> cuidando hasta el más <span class=\"highlight\">mínimo detalle.</span>",
     "hero.ctas.projects": "Proyectos",
     "hero.ctas.about": "Contacto",
@@ -202,7 +202,7 @@ window.i18nData = {
 
     // ─── HERO ───
     "hero.title": "Pau Cros",
-    "hero.sub": "Junior <span>Full-Stack</span> Developer",
+    "hero.sub": "<span>Full-Stack</span> Developer",
     "hero.desc": "I enjoy both creating <span class=\"highlight\">interactive animations</span> and designing a spectacular <span class=\"highlight\">UI/UX</span>, as well as building a robust and <span class=\"highlight\">secure backend</span> taking care of every last <span class=\"highlight\">detail.</span>",
     "hero.ctas.projects": "Projects",
     "hero.ctas.about": "Contact",
