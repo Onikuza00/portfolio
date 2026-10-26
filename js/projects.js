@@ -27,6 +27,7 @@ function goToPage(page) {
 
   grid.innerHTML = pageProjects.map(renderCard).join('');
   renderPagination();
+  renderProjectsMeta();
 
   if (!isInitialLoad) {
     if (typeof window.animateProjectCards === 'function') {
@@ -62,24 +63,25 @@ function collapseExpanded() {
 }
 
 function renderCard(p) {
-  const lang = window.currentLang || 'es';
+  const lang = window.currentLang || document.documentElement.lang || 'ca';
   const tDesc = window.i18nData?.[lang]?.[`project.${p.id}.desc`] || p.desc;
   const tExpandDesc = window.i18nData?.[lang]?.[`project.${p.id}.expandDesc`] || p.expandDesc;
+  const screenshotAlt = `${translate('projects.screenshot')} ${p.name}`;
 
   const uniqueImages = Array.from(new Set([p.img, ...(p.images || [])]));
   const images = uniqueImages.map(src =>
     `<img src="img/proyectos/${src}" alt="${p.name}" loading="lazy" />`
   ).join('');
 
-  const dateStr = formatDate(p.date);
+  const dateStr = formatDate(p.date, lang);
 
   return `
     <article class="project-card" data-project="${p.id}">
       <div class="project-card__preview">
-        <img src="img/proyectos/${p.img}" alt="Captura de ${p.name}" loading="lazy" />
+        <img src="img/proyectos/${p.img}" alt="${screenshotAlt}" loading="lazy" />
         <div class="project-card__info">
           <h3 class="project-card__name">${p.name}</h3>
-          <time class="project-card__date">${dateStr}</time>
+          <time class="project-card__date" datetime="${p.date}">${dateStr}</time>
           <p class="project-card__desc">${tDesc}</p>
           <p class="expand__desc" data-raw-text="${tExpandDesc}">${tExpandDesc}</p>
           <ul class="project-card__tags">
@@ -101,11 +103,12 @@ function renderPagination() {
   const total = Math.ceil(allProjects.length / PROJECTS_PER_PAGE);
   if (total <= 1) { nav.innerHTML = ''; return; }
 
-  let html = `<button class="pagination__btn pagination__prev"${currentPage <= 1 ? ' disabled' : ''} aria-label="Anterior">‹</button>`;
+  nav.setAttribute('aria-label', translate('projects.pagination'));
+  let html = `<button class="pagination__btn pagination__prev"${currentPage <= 1 ? ' disabled' : ''} aria-label="${translate('projects.prev')}">‹</button>`;
   for (let i = 1; i <= total; i++) {
     html += `<button class="pagination__btn${i === currentPage ? ' is-active' : ''}" data-page="${i}">${i}</button>`;
   }
-  html += `<button class="pagination__btn pagination__next"${currentPage >= total ? ' disabled' : ''} aria-label="Siguiente">›</button>`;
+  html += `<button class="pagination__btn pagination__next"${currentPage >= total ? ' disabled' : ''} aria-label="${translate('projects.next')}">›</button>`;
   nav.innerHTML = html;
 
   if (nav.dataset.rendered) {
@@ -135,12 +138,39 @@ function renderPagination() {
   });
 }
 
-function formatDate(dateStr) {
+const DATE_LOCALES = { ca: 'ca-ES', es: 'es-ES', en: 'en-GB' };
+
+// Intl gives the month already translated; only the month part is kept so every language reads "Month YYYY"
+function formatDate(dateStr, lang) {
   if (!dateStr) return '';
-  const [year, month] = dateStr.split('-');
-  const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-  return `${months[parseInt(month) - 1]} ${year}`;
+  const [year, month] = dateStr.split('-').map(Number);
+  const formatter = new Intl.DateTimeFormat(DATE_LOCALES[lang] || DATE_LOCALES.ca, { month: 'long' });
+  const monthName = formatter.formatToParts(new Date(year, month - 1, 1))
+    .find(part => part.type === 'month').value;
+  return `${monthName.charAt(0).toUpperCase()}${monthName.slice(1)} ${year}`;
+}
+
+function getProjectYears() {
+  const years = allProjects.map(p => Number(p.date?.split('-')[0])).filter(Boolean);
+  if (years.length === 0) return '';
+  const first = Math.min(...years);
+  const last = Math.max(...years);
+  return first === last ? `${first}` : `${first}-${last}`;
+}
+
+// Count and year range come from projects.json, so the header never goes stale
+function renderProjectsMeta() {
+  const meta = document.getElementById('projectsMeta');
+  if (!meta) return;
+  const template = translate('projects.meta');
+  meta.textContent = template
+    .replace('{count}', allProjects.length)
+    .replace('{years}', getProjectYears());
+}
+
+function translate(key) {
+  const lang = window.currentLang || document.documentElement.lang || 'ca';
+  return window.i18nData?.[lang]?.[key] ?? window.i18nData?.ca?.[key] ?? '';
 }
 
 document.addEventListener('DOMContentLoaded', initProjects);
