@@ -1096,25 +1096,25 @@
 
 /* --- STACK (mini-card grid) --- */
 .stack__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: var(--space-3);
+}
+
+@media (max-width: 400px) {
+  .stack__grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: var(--space-2);
   }
 
-  @media (max-width: 400px) {
-    .stack__grid {
-      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-      gap: var(--space-2);
-    }
-
-    .stack__card {
-      padding: var(--space-3) var(--space-2) var(--space-6);
-    }
-
-    .stack__icon {
-      font-size: 1.8rem;
-    }
+  .stack__card {
+    padding: var(--space-3) var(--space-2) var(--space-6);
   }
+
+  .stack__icon {
+    font-size: 1.8rem;
+  }
+}
 
 .stack__card {
   position: relative;
