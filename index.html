@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pau Crosas · Portfolio</title>
   <meta name="description"
-    content="Pau Crosas — Full-stack developer. 10 proyectos, tecnologías modernas, desarrollo web profesional." />
+    content="Pau Crosas — Desenvolupador full-stack. Projectes web reals amb GSAP, Symfony, Odoo i intel·ligència artificial." />
   <meta name="theme-color" content="#000000" />
   <meta name="author" content="Pau Crosas" />
 
@@ -17,7 +17,7 @@
 
 
   <meta property="og:title" content="Pau Crosas · Portfolio" />
-  <meta property="og:description" content="Full-stack developer · 10 proyectos reales" />
+  <meta property="og:description" content="Desenvolupador full-stack · Projectes web reals i IA" />
   <meta property="og:type" content="website" />
 
 
@@ -103,7 +103,7 @@
     </section>
 
     <!-- ═══ MARQUEE ═══ -->
-    <section class="section marquee" id="marquee" aria-label="Tecnologías">
+    <section class="section marquee" id="marquee" aria-label="Tecnologies" data-i18n-aria="marquee.label">
       <div class="marquee__track">
         <ul class="marquee__list">
           <li class="marquee__item text-mono">PHP</li>
@@ -147,7 +147,7 @@
     </section>
 
     <!-- ═══ TERMINAL ═══ -->
-    <section class="card-section" id="terminal" aria-label="Consola">
+    <section class="card-section" id="terminal" aria-label="Consola" data-i18n-aria="terminal.aria">
       <div class="container container--card">
         <div class="terminal-window text-mono">
           <div class="terminal__chrome">
@@ -176,7 +176,7 @@
               <span class="signal-dot"></span>
               <span class="text-mono" data-i18n="projects.label">PROYECTOS</span>
             </span>
-            <span class="card__meta text-mono" data-i18n="projects.meta">11 proyectos · 2025-2026</span>
+            <span class="card__meta text-mono" id="projectsMeta"></span>
           </div>
           <div class="card__body">
             <div class="section-head">
@@ -192,7 +192,7 @@
               </div>
             </div>
             <div class="grid__projects" id="gridProjects"></div>
-            <nav class="pagination" id="pagination" aria-label="Paginación de proyectos"></nav>
+            <nav class="pagination" id="pagination" aria-label="Navegació de projectes"></nav>
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@
               <span class="signal-dot"></span>
               <span class="text-mono" data-i18n="stack.label">STACK</span>
             </span>
-            <span class="card__meta text-mono" data-i18n="stack.meta">18 tecnologías</span>
+            <span class="card__meta text-mono" data-i18n="stack.meta" data-i18n-count=".stack__card"></span>
           </div>
           <div class="card__body">
             <div class="section-head">
@@ -523,7 +523,7 @@
           </a>
         </li>
         <li>
-          <a class="footer__link" href="mailto:paucb.dev@gmail.com" aria-label="Correo electrónico">
+          <a class="footer__link" href="mailto:paucb.dev@gmail.com" aria-label="Correu electrònic" data-i18n-aria="contact.form.email">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i>
           </a>
         </li>

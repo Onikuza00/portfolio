@@ -19,14 +19,23 @@ function initI18n() {
 function applyTranslations(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    const val = window.i18nData?.[lang]?.[key];
-    if (!val) return;
+    const raw = window.i18nData?.[lang]?.[key];
+    if (!raw) return;
+    // data-i18n-count holds a selector: "{count}" becomes the number of matching elements
+    const val = el.dataset.i18nCount
+      ? raw.replace('{count}', document.querySelectorAll(el.dataset.i18nCount).length)
+      : raw;
     // Use innerHTML for text containers, textContent for form elements
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
       el.placeholder = val;
     } else {
       el.innerHTML = val;
     }
+  });
+
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const val = window.i18nData?.[lang]?.[el.dataset.i18nAria];
+    if (val) el.setAttribute('aria-label', val);
   });
 }
 
@@ -498,8 +507,7 @@ function initContactForm() {
     if (!form.checkValidity()) return;
 
     const originalText = submitBtn.textContent;
-    const sendingText = window.currentLang === 'ca' ? 'Enviant…' : window.currentLang === 'en' ? 'Sending…' : 'Enviando…';
-    submitBtn.textContent = sendingText;
+    submitBtn.textContent = window.i18nData[window.currentLang]?.['contact.form.sending'] || 'Enviant…';
     submitBtn.disabled = true;
     statusEl.textContent = '';
     statusEl.className = 'contact__status';
@@ -519,7 +527,7 @@ function initContactForm() {
       });
 
       if (res.ok) {
-      statusEl.textContent = window.i18nData[window.currentLang]?.['contact.status.ok'] || '✓ Mensaje enviado. Gracias por contactarme.';
+      statusEl.textContent = window.i18nData[window.currentLang]?.['contact.status.ok'] || '✓ Missatge enviat. Gràcies per contactar amb mi.';
       statusEl.className = 'contact__status contact__status--ok';
         form.querySelectorAll('input, textarea').forEach(el => { if (el.type !== 'hidden') el.value = ''; });
       } else {
@@ -527,7 +535,7 @@ function initContactForm() {
         throw new Error(err.error?.message || 'Error del servidor');
       }
     } catch (err) {
-      statusEl.textContent = window.i18nData[window.currentLang]?.['contact.status.err'] || '✗ Hubo un error. Escribime directo a paucb.dev@gmail.com';
+      statusEl.textContent = window.i18nData[window.currentLang]?.['contact.status.err'] || '✗ Hi ha hagut un error. Escriu-me directe a paucb.dev@gmail.com';
       statusEl.className = 'contact__status contact__status--err';
     }
 

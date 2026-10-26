@@ -18,6 +18,7 @@ window.i18nData = {
 
     // ─── TERMINAL ───
     "terminal.label": " &lt; dev@terminal &gt; ",
+    "terminal.aria": "Consola",
     "terminal.messages": [
       "Inicialitzant perfil: Desenvolupador Web Full Stack",
       "Executant animacions... Especialista en interfícies dinàmiques i GSAP.",
@@ -30,14 +31,17 @@ window.i18nData = {
 
     // ─── PROJECTS SECTION ───
     "projects.label": "PROJECTES",
-    "projects.meta": "11 projectes · 2025-2026",
+    "projects.meta": "{count} projectes · {years}",
     "projects.title": "Projectes <span class=\"highlight\">destacats</span>",
     "projects.desc": "Una selecció de treballs recents, des de <b>landing pages</b> amb <b>WordPress</b> i codi vanilla (<b>HTML</b>, <b>CSS</b> i <b>JavaScript</b>), fins a <b>e-commerce</b> integrats amb <b>ERP Odoo</b> i <b>aplicacions web</b> completes amb <b>Symfony</b> + <b>Headless CMS</b>. Cada projecte amb <b>animacions GSAP</b>, <b>scroll suau</b> i una experiència <b>dinàmica</b> i <b>interactiva</b> pensada al detall.",
     "projects.pagination": "Navegació de projectes",
+    "projects.prev": "Anterior",
+    "projects.next": "Següent",
+    "projects.screenshot": "Captura de",
 
     // ─── STACK SECTION ───
     "stack.label": "STACK",
-    "stack.meta": "18 tecnologies",
+    "stack.meta": "{count} tecnologies",
     "stack.title": "Stack <span class=\"highlight\">tècnic</span>",
     "stack.desc": "Tecnologies amb les que treballo habitualment, ordenades per experiència real.",
 
@@ -46,7 +50,7 @@ window.i18nData = {
     "about.meta": "desenvolupador · persona",
     "about.title": "Sobre <span class=\"highlight\">mi</span>",
     "about.desc": "Breu resum de qui soc i com treballo.",
-    "about.text.1": "Soc un desenvolupador web Full Stack titulat en DAW, amb una forta especialització en frontend i la creació d'interfícies dinàmiques. La meva passió principal és el disseny d'interaccions fluïdes, i tinc una base tècnica sòlida en backend desenvolupant aplicacions segures mitjançant la gestió de polítiques CORS i autenticació amb JWT.",
+    "about.text.1": "Soc un desenvolupador web Full Stack titulat en DAW, amb una forta especialització en frontend i la creació d'interfícies dinàmiques. La meva passió principal és el disseny d'interaccions fluïdes, i tinc una base tècnica sòlida en backend desenvolupant aplicacions segures mitjançant la gestió de polítiques CORS i autenticació amb JWT. Actualment treballo a VoraData desenvolupant webs a mida i fluxos de desenvolupament assistit per agents d'IA.",
     "about.text.2": "A nivell professional, aporto maduresa, eficiència i constància. Soc una persona resilient amb una motivació innegociable per l'aprenentatge continu — exploro noves tecnologies i arquitectures d'IA per integrar-les en el desenvolupament, com ja vaig fer amb Groq/Llama al projecte 7Vision. Aquesta mateixa dedicació es reflecteix en el meu temps lliure amb 'GSAP Academy', on investigo i aplico a diari tècniques avançades d'animació.",
     "about.text.3": "Quan no estic escrivint codi, m'agrada cuinar, veure bon cinema i veure el futbol.",
     "about.img.alt": "Retrat de Pau Crosas",
@@ -61,6 +65,7 @@ window.i18nData = {
     "contact.form.subject": "Assumpte",
     "contact.form.message": "Missatge",
     "contact.form.submit": "Enviar missatge",
+    "contact.form.sending": "Enviant…",
     "contact.status.ok": "✓ Missatge enviat. Gràcies per contactar amb mi.",
     "contact.status.err": "✗ Hi ha hagut un error. Escriu-me directe a paucb.dev@gmail.com",
 
@@ -127,6 +132,7 @@ window.i18nData = {
 
     // ─── TERMINAL ───
     "terminal.label": " &lt; dev@terminal &gt; ",
+    "terminal.aria": "Consola",
     "terminal.messages": [
       "Inicializando perfil: Desarrollador Web Full Stack",
       "Ejecutando animaciones... Especialista en interfaces dinámicas y GSAP.",
@@ -139,23 +145,26 @@ window.i18nData = {
 
     // ─── PROJECTS SECTION ───
     "projects.label": "PROYECTOS",
-    "projects.meta": "11 proyectos · 2025-2026",
+    "projects.meta": "{count} proyectos · {years}",
     "projects.title": "Proyectos <span class=\"highlight\">destacados</span>",
     "projects.desc": "Una selección de trabajos recientes, desde <b>landing pages</b> con <b>WordPress</b> y código vanilla (<b>HTML</b>, <b>CSS</b> y <b>JavaScript</b>), hasta <b>e-commerce</b> integrados con <b>ERP Odoo</b> y <b>aplicaciones web</b> completas con <b>Symfony</b> + <b>Headless CMS</b>. Cada proyecto con <b>animaciones GSAP</b>, <b>scroll suave</b> y una experiencia <b>dinámica</b> e <b>interactiva</b> pensada al detalle.",
     "projects.pagination": "Paginación de proyectos",
+    "projects.prev": "Anterior",
+    "projects.next": "Siguiente",
+    "projects.screenshot": "Captura de",
 
     // ─── STACK SECTION ───
     "stack.label": "STACK",
-    "stack.meta": "18 tecnologías",
+    "stack.meta": "{count} tecnologías",
     "stack.title": "Stack <span class=\"highlight\">técnico</span>",
     "stack.desc": "Tecnologías con las que trabajo habitualmente, ordenadas por experiencia real.",
 
     // ─── ABOUT SECTION ───
     "about.label": "PERFIL",
     "about.meta": "desarrollador · persona",
-    "about.title": "Sobre <span class=\"highlight\">mi</span>",
+    "about.title": "Sobre <span class=\"highlight\">mí</span>",
     "about.desc": "Breve resumen de quién soy y cómo trabajo.",
-    "about.text.1": "Soy un desarrollador web Full Stack titulado en DAW, con una fuerte especialización en frontend y la creación de interfaces dinámicas. Mi pasión principal es el diseño de interacciones fluidas, y tengo una base técnica sólida en backend desarrollando aplicaciones seguras mediante la gestión de políticas CORS y autenticación con JWT.",
+    "about.text.1": "Soy un desarrollador web Full Stack titulado en DAW, con una fuerte especialización en frontend y la creación de interfaces dinámicas. Mi pasión principal es el diseño de interacciones fluidas, y tengo una base técnica sólida en backend desarrollando aplicaciones seguras mediante la gestión de políticas CORS y autenticación con JWT. Actualmente trabajo en VoraData desarrollando webs a medida y flujos de desarrollo asistido por agentes de IA.",
     "about.text.2": "A nivel profesional, aporto madurez, eficiencia y constancia. Soy una persona resiliente con una motivación innegociable por el aprendizaje continuo — exploro nuevas tecnologías y arquitecturas de IA para integrarlas en el desarrollo, como ya hice con Groq/Llama en el proyecto 7Vision. Esta misma dedicación se refleja en mi tiempo libre con 'GSAP Academy', donde investigo y aplico a diario técnicas avanzadas de animación.",
     "about.text.3": "Cuando no estoy escribiendo código, me gusta cocinar, ver buen cine y ver el fútbol.",
     "about.img.alt": "Retrato de Pau Crosas",
@@ -170,8 +179,9 @@ window.i18nData = {
     "contact.form.subject": "Asunto",
     "contact.form.message": "Mensaje",
     "contact.form.submit": "Enviar mensaje",
+    "contact.form.sending": "Enviando…",
     "contact.status.ok": "✓ Mensaje enviado. Gracias por contactarme.",
-    "contact.status.err": "✗ Hubo un error. Escribime directo a paucb.dev@gmail.com",
+    "contact.status.err": "✗ Hubo un error. Escríbeme directamente a paucb.dev@gmail.com",
 
     // ─── FAQ SECTION ───
     "faq.label": "FAQ",
@@ -188,6 +198,30 @@ window.i18nData = {
     "faq.a.4": "Es mi especialidad. Uso GSAP a diario — ScrollTrigger, SplitText, MorphSVG, scroll horizontal. Incluso tengo un laboratorio personal (GSAP Academy) donde investigo y pruebo técnicas nuevas de forma continua.",
     "faq.q.5": "¿Ofreces mantenimiento de los proyectos?",
     "faq.a.5": "Sí, todos los proyectos incluyen una fase de post-lanzamiento. Prefiero dejar el código documentado y con una base sólida que pueda escalar o ajustarse sin tener que rehacerlo.",
+
+    // ─── PROJECT CARDS ───
+    "project.cms.desc": "Headless CMS custom para gestión dinámica de secciones y contenido.",
+    "project.cms.expandDesc": "Headless CMS desarrollado bajo la metodología SDD (Spec-Driven Development) con Symfony y Twig Components. Diseñado para que los clientes gestionen de forma autónoma las secciones y contenidos de sus webs sin tocar código. Cuenta con una API segura protegida mediante autenticación por tokens (JWT) para cada endpoint, interfaz adaptativa con Bootstrap y animaciones dinámicas.",
+    "project.aula-gastronomica.desc": "Web institucional interactiva para escuela de cocina con catálogo de cursos.",
+    "project.aula-gastronomica.expandDesc": "Landing page interactiva e inmersiva conectada a un Headless CMS para la gestión e inscripción a cursos y talleres culinarios. Ofrece una navegación fluida con animaciones avanzadas en GSAP y efectos modernos de CSS.",
+    "project.victoriaTaylor.desc": "Landing page para taller de artistas con integración dinámica de contenidos.",
+    "project.victoriaTaylor.expandDesc": "Landing page elegante diseñada para un taller de artistas, conectada directamente al Headless CMS a través de API REST. Permite la gestión dinámica del portfolio y contenidos del taller, con animaciones sutiles utilizando GSAP y un formulario de contacto funcional.",
+    "project.palmitoHouse.desc": "Landing page interactiva para alquiler vacacional en les Preses, Girona.",
+    "project.palmitoHouse.expandDesc": "Landing page para promocionar una propiedad de alquiler turístico en les Preses, Girona. Cuenta con galerías inmersivas animadas con GSAP y un formulario interactivo de contacto y reservas.",
+    "project.voraStudio.desc": "Web corporativa e interactiva para el estudio creativo Vora Studio.",
+    "project.voraStudio.expandDesc": "Sitio web oficial del estudio creativo Vora Studio, diseñado con un enfoque altamente visual e interactivo. Desarrollado íntegramente con HTML, CSS y JavaScript, destaca por el uso intensivo de GSAP para implementar animaciones complejas, scroll horizontal, efectos parallax, recortes geométricos mediante clip-paths y diversos trucos visuales avanzados.",
+    "project.comercial-ros.desc": "E-commerce B2B/B2C integrado con ERP Odoo.",
+    "project.comercial-ros.expandDesc": "Plataforma de comercio electrónico B2B y B2C totalmente integrada con el ERP Odoo. Permite la gestión centralizada de catálogos y tarifas personalizadas según el tipo de cliente, control de accesos con múltiples niveles de seguridad, plataformas de pago restringidas y sincronización de stock y facturación en tiempo real.",
+    "project.raymel.desc": "Landing page interactiva para tienda de caramelos.",
+    "project.raymel.expandDesc": "Landing page interactiva para una tienda de caramelos del grupo Comercial Ros. Desarrollada con HTML, CSS y JavaScript, cuenta con múltiples animaciones en GSAP, efectos avanzados como clip-paths, soporte multi-idioma y enlace directo a la tienda en Odoo para la adquisición de productos.",
+    "project.guardavan.desc": "Landing page para parking de caravanas desarrollada en WordPress.",
+    "project.guardavan.expandDesc": "Landing page para una empresa de parking de caravanas. Desarrollada íntegramente con WordPress y Elementor, aplicando maquetación visual y personalizaciones de CSS a medida en la hoja de estilos base para adaptar el diseño de los plugins a la identidad de la marca. Uno de mis primeros proyectos profesionales.",
+    "project.aurexinmobles.desc": "Landing page para agencia inmobiliaria desarrollada en WordPress.",
+    "project.aurexinmobles.expandDesc": "Landing page profesional para una agencia inmobiliaria, desarrollada con WordPress y Elementor como uno de mis primeros proyectos durante mi período de prácticas. Sigue una línea de diseño establecida por el equipo, con ajustes de CSS personalizado para adaptar la maquetación a los requerimientos visuales del proyecto.",
+    "project.7vision.desc": "Red social de cine con recomendador de IA, dashboard y CMS.",
+    "project.7vision.expandDesc": "Proyecto final de ciclo (DAW) calificado con un 9.5. Es una red social y plataforma interactiva sobre cine que integra un recomendador de películas basado en Inteligencia Artificial (Groq/Llama), un completo panel de administración (CMS) y visualización de datos. El frontend está desarrollado con Vue y animado con GSAP (usando carruseles Swiper y modales SweetAlert), mientras que el backend está construido con Symfony con múltiples capas de seguridad, CORS y autenticación JWT.",
+    "project.casa-nostra.desc": "Landing page interactiva para tienda de frutas y verduras con sistema de login.",
+    "project.casa-nostra.expandDesc": "Proyecto académico de primer año. Consiste en una landing page para una tienda local de frutas y verduras inspirada en Casa Nostra. Desarrollada con HTML, CSS y JavaScript vanilla, incluye un simulador de autenticación de usuario (login) y validación de formularios gestionado íntegramente desde el lado del cliente con JavaScript.",
 
     // ─── FOOTER ───
     "footer.copyright": "&copy; 2026 Pau Crosas. Todos los derechos reservados."
@@ -212,6 +246,7 @@ window.i18nData = {
 
     // ─── TERMINAL ───
     "terminal.label": " &lt; dev@terminal &gt; ",
+    "terminal.aria": "Console",
     "terminal.messages": [
       "Initializing profile: Full Stack Web Developer",
       "Running animations... Specialist in dynamic interfaces and GSAP.",
@@ -224,14 +259,17 @@ window.i18nData = {
 
     // ─── PROJECTS SECTION ───
     "projects.label": "PROJECTS",
-    "projects.meta": "11 projects · 2025-2026",
+    "projects.meta": "{count} projects · {years}",
     "projects.title": "Featured <span class=\"highlight\">Projects</span>",
     "projects.desc": "A selection of recent work, from <b>landing pages</b> with <b>WordPress</b> and vanilla code (<b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b>), to <b>e-commerce</b> integrated with <b>Odoo ERP</b> and full <b>web applications</b> with <b>Symfony</b> + <b>Headless CMS</b>. Each project features <b>GSAP animations</b>, <b>smooth scrolling</b>, and a carefully crafted <b>dynamic</b> and <b>interactive</b> experience.",
     "projects.pagination": "Project pagination",
+    "projects.prev": "Previous",
+    "projects.next": "Next",
+    "projects.screenshot": "Screenshot of",
 
     // ─── STACK SECTION ───
     "stack.label": "STACK",
-    "stack.meta": "18 technologies",
+    "stack.meta": "{count} technologies",
     "stack.title": "Technical <span class=\"highlight\">Stack</span>",
     "stack.desc": "Technologies I work with regularly, ordered by real experience.",
 
@@ -240,7 +278,7 @@ window.i18nData = {
     "about.meta": "developer · person",
     "about.title": "About <span class=\"highlight\">Me</span>",
     "about.desc": "Brief summary of who I am and how I work.",
-    "about.text.1": "I'm a Full Stack web developer with a DAW degree, strongly specialized in frontend and dynamic interfaces. My main passion is designing fluid interactions, and I have a solid technical foundation in backend, building secure applications through CORS policy management and JWT authentication.",
+    "about.text.1": "I'm a Full Stack web developer with a DAW degree, strongly specialized in frontend and dynamic interfaces. My main passion is designing fluid interactions, and I have a solid technical foundation in backend, building secure applications through CORS policy management and JWT authentication. I currently work at VoraData, building custom websites and AI agent-assisted development workflows.",
     "about.text.2": "Professionally, I bring maturity, efficiency, and consistency. I'm a resilient person with a non-negotiable drive for continuous learning — I explore new technologies and AI architectures to integrate them into development, as I already did with Groq/Llama in the 7Vision project. This same dedication carries into my free time with 'GSAP Academy', where I research and apply advanced animation techniques daily.",
     "about.text.3": "When I'm not writing code, I enjoy cooking, watching good films, and football.",
     "about.img.alt": "Portrait of Pau Crosas",
@@ -255,6 +293,7 @@ window.i18nData = {
     "contact.form.subject": "Subject",
     "contact.form.message": "Message",
     "contact.form.submit": "Send message",
+    "contact.form.sending": "Sending…",
     "contact.status.ok": "✓ Message sent. Thanks for reaching out.",
     "contact.status.err": "✗ Something went wrong. Email me directly at paucb.dev@gmail.com",
 
